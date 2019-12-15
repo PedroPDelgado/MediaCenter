@@ -103,11 +103,11 @@ public class Facade {
                     String categoria = r.getCd().get(1).procuraPorFilePath(filepaths[i]).getCategoria();
                     if (r.getCd().getColDefaultRegistado(r.getNome()).existeFilePath(filepaths[i])) {
                         if(!c.existeFilePath(filepaths[i]))
-                            c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]), "", filepaths[i], c.getId(), -1));
+                            c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]), categoria, filepaths[i], c.getId(), -1));
                     } else {
                         c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]),
-                                "", filepaths[i], r.getCd().getColDefaultRegistado(r.getNome()).getId(), -1));
-                        c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]), "", filepaths[i], c.getId(), -1));
+                                categoria, filepaths[i], r.getCd().getColDefaultRegistado(r.getNome()).getId(), -1));
+                        c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]), categoria, filepaths[i], c.getId(), -1));
                     }
                 } else {
                     c.getCd().add(new Conteudo(c.getCd().size() + 1, getFileName(filepaths[i]),
